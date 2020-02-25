@@ -24,6 +24,15 @@ const resolvers = {
 
             people.push(newPerson);
             return newPerson;
+        },
+        deletePerson: (rootValue, { id }) => {
+            const newPeople = people.filter(person => {
+                if (person.id !== id) {
+                    return person;
+                }
+            })
+
+            return newPeople;
         }
     }
 }
