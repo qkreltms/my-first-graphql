@@ -1,0 +1,18 @@
+type Person {
+    name: String!
+    age: Int!
+    gender: String!
+    id: Int!
+}
+
+# Query, Mutation은 예약어임
+type Query {
+    name: String!
+    person(id: Int!): Person
+    people: [Person]
+}
+
+type Mutation {
+    # addPerson(person: Person!): Person!
+    addPerson(name: String!, age: Int!, gender: String!): Person!
+}
